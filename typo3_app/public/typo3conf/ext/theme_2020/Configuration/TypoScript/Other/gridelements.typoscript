@@ -19,7 +19,10 @@ lib.gridelements.defaultGridSetup {
 
 }
 
-tt_content.gridelements_pi1.20.10.setup {
+tt_content.gridelements_pi1 < lib.gridelements.defaultGridSetup
+
+
+tt_content.gridelements_pi1.setup {
     // Dreispaltig
     layout2 < lib.gridelements.defaultGridSetup
     layout2 {
