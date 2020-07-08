@@ -4,8 +4,8 @@ nbproject
 
 /typo3_app/var
 /typo3_app/vendor
-#/typo3_app/public/*
-#/typo3_app/public/typo3conf/ext
+/typo3_app/public/*
+/typo3_app/public/typo3conf/ext
 !/typo3_app/public/typo3conf/ext/theme_2020/*
 !/typo3_app/public/typo3conf/LocalConfiguration.php
 !/typo3_app/public/typo3conf/AdditionalConfiguration.php
