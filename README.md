@@ -8,7 +8,13 @@ or with docker-compose:
 
 `docker-compose up`
 
-The site is now accessible at http://localhost:8088
+## Composer packages
+
+RUn the following command INSIDE the php container to install all required packages:
+
+``docker exec -ti -w /var/www/html/typo3_app $(docker ps --filter name=php --format {{.ID}}) php composer.phar install``
+
+After installation the site should be accessible at http://localhost:8088
 
 ## TYPO3 Admin:
 
