@@ -1,0 +1,186 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme_2020/Configuration/Typoscript/Other/main_menu.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme_2020/Configuration/Typoscript/Other/gridelements.typoscript">
+
+config {
+  doctype = html5
+
+  // Character sets
+  renderCharset = utf-8
+  metaCharset = utf-8
+
+  // Cache settings
+  cache_period = 3600
+  sendCacheHeaders = 1
+
+  // baseURL is dead - long live absRefPrefix
+  absRefPrefix = /
+
+  // Language Settings
+  uniqueLinkVars = 1
+  linkVars = L(0-2)
+  sys_language_uid = 0
+  sys_language_overlay = 0
+  sys_language_mode = content_fallback
+
+  // Link settings
+  prefixLocalAnchors = all
+
+  // Targets from links
+  intTarget =
+  extTarget =
+  fileTarget =
+
+  // Indexed Search (also solr)
+  index_enable = 1
+  index_externals = 1
+
+  // Code cleaning
+  disablePrefixComment = 1
+  xmlprologue = none
+  xhtml_cleaning = all
+
+  // -> changed due to google page speed optimization recommendations
+  removeDefaultJS = 0
+  inlineStyle2TempFile = 0
+
+  // move default JS files from header to footer
+  moveJsFromHeaderToFooter = 1
+
+  noScaleUp = 1
+  meaningfulTempFilePrefix = 15
+
+  typolinkCheckRootline = 1
+  typolinkEnableLinksAcrossDomains = 1
+  disablePrefixComment = 1
+
+  no_cache = 1
+  admPanel = 0
+
+  concatenateJs = 1
+  concatenateCss = 1
+  compressJs = 1
+  compressCss = 1
+
+  contentObjectExceptionHandler = 1
+
+  # Deutsch
+  sys_language_uid = 0
+  language = de
+  locale_all = de_DE.UTF-8
+  htmlTag_langKey = de
+}
+
+// Make the PAGE object
+page = PAGE
+page {
+  typeNum = 0
+
+  // FavIcon
+  shortcutIcon = EXT:theme_2020/Resources/Public/Images/favicon.ico
+
+  headerData {
+    10 = TEXT
+    10.value (
+      <!-- Google Tag Manager -->
+      <!-- End Google Tag Manager -->
+    )
+
+    20 = TEXT
+    20.value (
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+      <link rel="manifest" href="/favicon/site.webmanifest">
+      <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#8c22e8">
+      <link rel="shortcut icon" href="/favicon/favicon.ico">
+      <meta name="apple-mobile-web-app-title" content="EVAK Bonn">
+      <meta name="application-name" content="EVAK Bonn">
+      <meta name="msapplication-TileColor" content="#8c22e8">
+      <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
+    )
+  }
+
+  includeCSS {
+  }
+
+  // better include JS to footer to improve page loading speed
+  includeJSLibs {
+  }
+
+  includeJS {
+  }
+
+  includeJSFooterlibs {
+  }
+
+  includeJSFooter {
+
+  }
+
+  // META TAGS (use metaseo-setup)
+  meta {
+    viewport = width=device-width, initial-scale=1
+  }
+
+  bodyTag >
+  bodyTagCObject>
+  bodyTagCObject = HMENU
+  bodyTagCObject {
+    special = rootline
+    special.range = 1
+    1 = TMENU
+    1 {
+      wrap = |
+      NO {
+        doNotLinkIt = 1
+        stdWrap < temp.cleanText
+        after.noTrimWrap = || |
+      }
+    }
+    stdWrap.ifEmpty =
+  }
+
+  bodyTagCObject = TEXT
+  bodyTagCObject.field = uid
+  bodyTagCObject.wrap = <body class="page page-|">
+
+  // Add a TEMPLATE object to the page
+  10 = FLUIDTEMPLATE
+  10 {
+    partialRootPath = EXT:theme_2020/Resources/Private/Partials/
+    layoutRootPath = EXT:theme_2020/Resources/Private/Layouts/
+
+    file.stdWrap.cObject = TEXT
+    file.stdWrap.cObject {
+      value = pagets__Content
+      override.field = backend_layout
+
+      split {
+        token = pagets__
+        1.current = 1
+        1.wrap = |
+      }
+
+      wrap = EXT:theme_2020/Resources/Private/Templates/|.html
+    }
+
+    variables {
+
+        home_header < styles.content.get
+        home_header.select.where = colPos = 1
+        home_header.select.languageField = sys_language_uid
+
+        content < styles.content.get
+        content.select.where = colPos = 0
+        content.select.languageField = sys_language_uid
+    }
+  }
+}
+
+[treeLevel = 0]
+page.bodyTagCObject>
+page.bodyTagCObject = TEXT
+page.bodyTagCObject.value = <body class="home">
+[GLOBAL]
+

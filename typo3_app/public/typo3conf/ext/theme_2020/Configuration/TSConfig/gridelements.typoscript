@@ -1,0 +1,138 @@
+tx_gridelements {
+  overruleRecords = 1
+
+  setup {
+    1 {
+      title = Zweispaltig
+      description = Zweispaltig
+      frame = 0
+      icon = EXT:theme_2020/Resources/Public/Icons/gridelements-zweispaltig.svg
+      topLevelLayout = 0
+      config {
+        colCount = 2
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Spalte 1
+                colPos = 11
+              }
+              2 {
+                name = Spalte 2
+                colPos = 12
+              }
+            }
+          }
+        }
+      }
+    }
+
+    2 {
+      title = Dreispaltig
+      description = Dreispaltig
+      frame = 0
+      icon = EXT:theme_2020/Resources/Public/Icons/gridelements-dreispaltig.svg
+      topLevelLayout = 0
+      config {
+        colCount = 3
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Spalte 1
+                colPos = 11
+              }
+              2 {
+                name = Spalte 2
+                colPos = 12
+              }
+              3 {
+                name = Spalte 3
+                colPos = 13
+              }
+            }
+          }
+        }
+      }
+    }
+
+    3 {
+      title = Zweispaltig (33 / 66)
+      description = Zweispaltig (1 Drittel / 2 Drittel)
+      frame = 0
+      icon = EXT:theme_2020/Resources/Public/Icons/gridelements-dreispaltig.svg
+      topLevelLayout = 0
+      config {
+        colCount = 3
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Spalte 1
+                colPos = 11
+              }
+              2 {
+                name = Spalte 2
+                colPos = 12
+                colspan = 2
+              }
+            }
+          }
+        }
+      }
+    }
+
+    4 {
+      title = Zweispaltig (66 / 33)
+      description = Zweispaltig (2 Drittel / 1 Drittel)
+      frame = 0
+      icon = EXT:theme_2020/Resources/Public/Icons/gridelements-dreispaltig.svg
+      topLevelLayout = 0
+      config {
+        colCount = 3
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Spalte 1
+                colPos = 11
+                colspan = 2
+              }
+              2 {
+                name = Spalte 2
+                colPos = 12
+              }
+            }
+          }
+        }
+      }
+    }
+
+    5 {
+      title = Einspaltig
+      description = Einspaltig
+      frame = 0
+      icon = EXT:theme_2020/Resources/Public/Icons/gridelements-dreispaltig.svg
+      topLevelLayout = 0
+      config {
+        colCount = 1
+        rowCount = 1
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Spalte 1
+                colPos = 11
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

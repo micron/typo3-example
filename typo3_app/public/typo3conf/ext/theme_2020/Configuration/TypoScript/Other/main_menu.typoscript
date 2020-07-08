@@ -1,0 +1,137 @@
+lib.header_menu = COA
+lib.header_menu {
+    10 = HMENU
+    10 {
+        wrap = <div class="collapse navbar-collapse" id="main-nav">|</div>
+        entryLevel = 0
+        1 = TMENU
+        1 {
+            expAll = 1
+            noBlur = 1
+            wrap = <ul class="nav">|</ul>
+            target = _top
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                allWrap.insertData=1
+                allWrap = <li class="nav-item nav-item-{field:uid}">
+                ATagParams = class="nav-link"
+                wrapItemAndSub.cObject = TEXT
+                wrapItemAndSub.cObject {
+
+                    value = |</li>
+                    value.override.cObject = CASE
+                    value.override.cObject {
+                        key.field = uid
+                        80 = TEXT
+                        80.value = <li class="nav-item">|</li>
+                    }
+                }
+
+
+            }
+
+            NO.wrapItemAndSub.override.cObject = COA
+            NO.wrapItemAndSub.override.cObject {
+                if {
+
+                    value = 4
+                    equals.field = doktype
+                    isTrue = 1
+                    isTrue.if {
+                    value.data = TSFE:page|uid
+                    equals.field = shortcut
+                    }
+                }
+                10 = TEXT
+                10.value = <li class="nav-item active">|</li>
+            }
+
+
+            ACT = 1
+            ACT {
+                wrapItemAndSub = <li class="nav-item active">|</li>
+                ATagParams = class="nav-link"
+            }
+
+            IFSUB = 1
+            IFSUB {
+                allWrap.insertData=1
+                allWrap = <li class="nav-item nav-item-{field:uid} dropdown">
+                wrapItemAndSub = |</li>
+                ATagParams = class="nav-link dropdown-toggle" data-toggle="dropdown"
+            }
+
+            ACTIFSUB = 1
+            ACTIFSUB {
+                ATagParams = class="nav-link dropdown-toggle" data-toggle="dropdown"
+                allWrap = |
+                wrapItemAndSub = <li class="nav-item dropdown active">|</li>
+            }
+        }
+
+        2 = TMENU
+        2 {
+            noBlur = 1
+            wrap = <div class="dropdown-menu">|</div>
+            target = _top
+            NO {
+                stdWrap.htmlSpecialChars = 1
+                wrapItemAndSub = |
+                ATagParams = class="dropdown-item"
+            }
+
+            CUR < .NO
+            CUR = 1
+            CUR {
+                allWrap = |
+            }
+            ACT < .CUR
+            ACT = 1
+        }
+    }
+}
+
+lib.header_lang_menu = COA
+lib.header_lang_menu {
+    20 = HMENU
+    20 {
+        special = language
+        special.value = 0,2
+        special.normalWhenNoLanguage = 0
+
+        1 = TMENU
+        1 {
+            noBlur = 1
+            NO = 1
+            NO {
+                doNotLinkIt = 1
+                linkWrap = <li class="nav-item">|</li>
+                stdWrap.override = DE || EN
+                stdWrap {
+                    typolink {
+                        parameter.data = page:uid
+                        additionalParams = &L=0 || &L=2
+                        ATagParams = hreflang="de-DE" class="nav-link" || hreflang="en-GB" class="nav-link"
+                        addQueryString = 1
+                        addQueryString.exclude = L,id,no_cache
+                        addQueryString.method = GET
+                        no_cache = 0
+                    }
+                }
+            }
+            ACT < .NO
+            ACT.linkWrap = <li class="nav-item active">|</li>
+            USERDEF1 < .NO
+            USERDEF1 {
+                linkWrap = <li class="text-muted">|</li>
+                stdWrap.typolink >
+            }
+            USERDEF2 < .ACT
+            USERDEF2 {
+                linkWrap = <li class="text-muted">|</li>
+                stdWrap.typolink >
+            }
+        }
+    }
+    wrap = <ul class="nav language-nav">|</ul>
+}

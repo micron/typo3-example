@@ -1,0 +1,4 @@
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme_2020/Configuration/TSconfig/PageTS/TCAdefaults.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme_2020/Configuration/TSconfig/PageTS/TCEFORM.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE: EXT:theme_2020/Configuration/TSconfig/gridelements.typoscript">
+<INCLUDE_TYPOSCRIPT: source="DIR:  EXT:theme_2020/Configuration/BackendLayouts/" extensions="typoscript">

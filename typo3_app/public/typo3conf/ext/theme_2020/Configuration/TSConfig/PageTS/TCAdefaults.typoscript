@@ -1,0 +1,9 @@
+TCAdefaults {
+  pages {
+    backend_layout = pagets__Content
+  }
+  tt_content {
+    header_layout = 2
+  }
+}
+

@@ -1,0 +1,114 @@
+TCEFORM {
+
+  tt_content {
+
+    layout {
+
+      keepItems = 0
+
+      addItems {
+        # 10 = Lorem
+      }
+
+      types {
+
+        textmedia {
+          addItems {
+          }
+        }
+
+        list {
+          # removeItems =
+          addItems {
+          }
+        }
+
+      }
+
+    }
+
+    header_layout {
+      removeItems = 0
+      altLabels.1 = h1
+      altLabels.2 = h2
+      altLabels.3 = h3
+      altLabels.4 = h4
+      altLabels.5 = h5
+      # addItems.10 = div sieht aus wie h2
+    }
+
+    header_position.disabled = 1
+  }
+
+  pages {
+    backend_layout.removeItems = 0,-1
+    backend_layout_next_level.removeItems = -1
+    backend_layout_next_level.disabled = 1
+  }
+
+  sys_file_reference {
+    crop.config.cropVariants {
+      default {
+        title = Default
+        selectedRatio = NaN
+        allowedAspectRatios {
+          NaN {
+            title = free
+            value = 0.0
+          }
+          3:2 {
+            title = 3:2
+            value = 1.5
+          }
+          16:9 {
+            title = 16:9
+            value = 1.777777778
+          }
+          1:1 {
+            title = 1:1
+            value = 1
+          }
+          2:1 {
+            title = 2:1
+            value = 2
+          }
+          4:1 {
+            title = 4:1
+            value = 4
+          }
+        }
+      }
+      mobile {
+        title = Mobile
+        selectedRatio = NaN
+        allowedAspectRatios {
+          4:1 {
+            title = 4:1
+            value = 4
+          }
+        }
+      }
+      teaserdesktop {
+        title = Teaser Desktop
+        selectedRatio = NaN
+        allowedAspectRatios {
+          5:1 {
+            title = 5:1
+            value = 5
+          }
+        }
+      }
+      teasermobile {
+        title = Teaser Mobile
+        selectedRatio = NaN
+        allowedAspectRatios {
+          5:2 {
+            title = 5:2
+            value = 2.5
+          }
+        }
+      }
+    }
+  }
+
+}

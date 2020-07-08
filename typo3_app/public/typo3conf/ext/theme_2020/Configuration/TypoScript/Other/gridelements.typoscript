@@ -1,0 +1,26 @@
+# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:gridelements/Configuration/TypoScript/setup.typoscript">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gridelements/Configuration/TypoScript/DataProcessing/setup.typoscript">
+
+lib.defaultGridSetupFluidTemplate = FLUIDTEMPLATE
+lib.defaultGridSetupFluidTemplate {
+
+    templateRootPaths.30 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Templates/
+    partialRootPaths.30 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Partials/
+    layoutRootPaths.30 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Layouts/
+}
+
+tt_content.gridelements_pi1.20.10.setup {
+    // Dreispaltig
+    2 < lib.gridelements.defaultGridSetupFluidTemplate
+    2 {
+        cObject < FLUIDTEMPLATE
+        cObject.templateName = Col-33-33-33
+    }
+
+    // Einspaltig
+    5 < lib.gridelements.defaultGridSetupFluidTemplate
+    5 {
+        cObject < FLUIDTEMPLATE
+        cObject.templateName = Col-100
+    }
+}

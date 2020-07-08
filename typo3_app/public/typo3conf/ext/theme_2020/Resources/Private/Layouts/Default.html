@@ -1,0 +1,13 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
+
+<f:layout name="Default"/>
+
+<div>
+    <f:render section="Header" partial="Structure/Header" arguments="{_all}"/>
+
+    <main class="main-content">
+        <f:render section="Content"/>
+    </main>
+
+    <f:render section="Footer" partial="Structure/Footer" arguments="{_all}"/>
+</div>

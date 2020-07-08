@@ -1,0 +1,30 @@
+mod.web_layout.BackendLayouts {
+  Content {
+    title = Contentpage
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Header
+                colPos = 1
+                allowed = text,menu_section
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                name = Content
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
