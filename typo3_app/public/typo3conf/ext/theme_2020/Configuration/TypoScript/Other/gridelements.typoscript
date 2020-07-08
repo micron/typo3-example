@@ -1,24 +1,34 @@
-# <INCLUDE_TYPOSCRIPT: source="FILE:EXT:gridelements/Configuration/TypoScript/setup.typoscript">
+#<INCLUDE_TYPOSCRIPT: source="FILE:EXT:gridelements/Configuration/TypoScript/setup.typoscript">
 <INCLUDE_TYPOSCRIPT: source="FILE:EXT:gridelements/Configuration/TypoScript/DataProcessing/setup.typoscript">
 
-lib.defaultGridSetupFluidTemplate = FLUIDTEMPLATE
-lib.defaultGridSetupFluidTemplate {
+lib.gridelements.defaultGridSetup = FLUIDTEMPLATE
+lib.gridelements.defaultGridSetup {
+    templateName.field = tx_gridelements_backend_layout
+    templateName.ifEmpty = default
+    layoutRootPaths {
+        20 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Layouts/
+    }
 
-    templateRootPaths.30 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Templates/
-    partialRootPaths.30 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Partials/
-    layoutRootPaths.30 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Layouts/
+    partialRootPaths {
+        20 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Templates/
+    }
+
+    templateRootPaths {
+        20 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Templates/
+    }
+
 }
 
 tt_content.gridelements_pi1.20.10.setup {
     // Dreispaltig
-    2 < lib.gridelements.defaultGridSetupFluidTemplate
-    2 {
+    layout2 < lib.gridelements.defaultGridSetup
+    layout2 {
         cObject < FLUIDTEMPLATE
         cObject.templateName = Col-33-33-33
     }
 
     // Einspaltig
-    5 < lib.gridelements.defaultGridSetupFluidTemplate
+    5 < lib.gridelements.defaultGridSetup
     5 {
         cObject < FLUIDTEMPLATE
         cObject.templateName = Col-100

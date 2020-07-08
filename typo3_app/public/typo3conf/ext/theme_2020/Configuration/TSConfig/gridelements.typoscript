@@ -28,7 +28,7 @@ tx_gridelements {
       }
     }
 
-    2 {
+    layout2 {
       title = Dreispaltig
       description = Dreispaltig
       frame = 0
