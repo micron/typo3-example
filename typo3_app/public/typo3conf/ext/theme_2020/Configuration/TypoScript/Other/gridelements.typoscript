@@ -17,6 +17,27 @@ lib.gridelements.defaultGridSetup {
         20 = EXT:theme_2020/Resources/Private/Extensions/gridelements/Templates/
     }
 
+    dataProcessing {
+        10 = GridElementsTeam\Gridelements\DataProcessing\GridChildrenProcessor
+        10 {
+            default {
+                as = children
+                # Default options of the grid children processor
+                # Change them according to the needs of your layout
+                # Read more about it in the TypoScript section of the manual
+                # options {
+                # sortingDirection = ASC
+                # sortingField = sorting
+                # recursive = 0
+                # resolveFlexFormData = 1
+                # resolveBackendLayout = 1
+                # respectColumns = 1
+                # respectRows = 1
+                # }
+            }
+        }
+    }
+
 }
 
 tt_content.gridelements_pi1 < lib.gridelements.defaultGridSetup
@@ -27,8 +48,6 @@ tt_content.gridelements_pi1.20.10.setup {
     layout2 < lib.gridelements.defaultGridSetup
     layout2 {
         cObject < FLUIDTEMPLATE
-        cObject.file = EXT:theme_2020/Resources/Private/Extensions/gridelements/Templates/Layout2.html
-        cObject.templateName = Col-33-33-33
     }
 
     // Einspaltig
