@@ -22,11 +22,12 @@ lib.gridelements.defaultGridSetup {
 tt_content.gridelements_pi1 < lib.gridelements.defaultGridSetup
 
 
-tt_content.gridelements_pi1.setup {
+tt_content.gridelements_pi1.20.10.setup {
     // Dreispaltig
     layout2 < lib.gridelements.defaultGridSetup
     layout2 {
         cObject < FLUIDTEMPLATE
+        cObject.file = EXT:theme_2020/Resources/Private/Extensions/gridelements/Templates/Layout2.html
         cObject.templateName = Col-33-33-33
     }
 
