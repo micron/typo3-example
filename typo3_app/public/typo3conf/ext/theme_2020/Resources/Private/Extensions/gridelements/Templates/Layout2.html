@@ -2,19 +2,30 @@
 
     <f:layout name="Default" />
     <f:section name="Content">
-        <f:debug maxDepth="16">{_all}</f:debug>
+        <f:debug maxDepth="16">{columns.11}</f:debug>
         <div class="row">
             <div class="col-sm-6 col-md-4">
+
+                <f:for each="{columns.11}" as="child">
+                    <f:render partial="Child"
+                          arguments="{data: child.data, children: child.children, options: options, settings: settings}"/>
+                </f:for>
                 1
-                {data.tx_gridelements_view_column_11}
+
             </div>
             <div class="col-sm-6 col-md-4">
                 2
-                {data.tx_gridelements_view_column_12}
+                <f:for each="{columns.12}" as="child">
+                    <f:render partial="Child"
+                              arguments="{data: child.data, children: child.children, options: options, settings: settings}"/>
+                </f:for>
             </div>
             <div class="col-sm-6 col-md-4">
                 3
-                {data.tx_gridelements_view_column_13}
+                <f:for each="{columns.13}" as="child">
+                    <f:render partial="Child"
+                              arguments="{data: child.data, children: child.children, options: options, settings: settings}"/>
+                </f:for>
             </div>
         </div>
     </f:section>

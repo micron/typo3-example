@@ -35,6 +35,28 @@ lib.gridelements.defaultGridSetup {
                 # respectRows = 1
                 # }
             }
+
+            layout2 {
+                as = columns
+                options {
+                    sortingDirection = ASC
+                    recursive = 1
+                    respectColumns = 1
+                    respectRows = 0
+                    resolveFlexFormData = 0
+                }
+            }
+
+            5 {
+                as = header
+                options {
+                    sortingDirection = ASC
+                    recursive = 1
+                    respectColumns = 1
+                    respectRows = 0
+                    resolveFlexFormData = 0
+                }
+            }
         }
     }
 
